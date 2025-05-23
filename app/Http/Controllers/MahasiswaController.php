@@ -52,7 +52,7 @@ class MahasiswaController extends Controller
     public function show(Mahasiswa $mahasiswa)
     {
         $mahasiswa->load('user');
-        return view('mahasiswa.show', compact('mahasiswa'));
+        return view('books.index', compact('mahasiswa'));
     }
 
     public function edit(Mahasiswa $mahasiswa)
