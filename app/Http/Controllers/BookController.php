@@ -23,20 +23,20 @@ class BookController extends Controller
             'penulis' => 'required|string|max:255',
             'tahun_terbit' => 'required|integer',
             'kategori' => 'required|string|max:255',
-            'status' => 'required',
+            'status' => 'required|string|max:255',
         ]);
-        
-        Book::create($validated);
 
-        return redirect()->route('books.index')
-            ->with('success', 'Buku berhasil ditambahkan.');
+        Book::create($validated);
+        return redirect()->route('books.index')->with('success', 'Book created successfully.');
     }
 
     public function show(Book $book) {
+        $book = Book::findOrFail($book->id);
         return view('books.show', compact('book'));
     }
 
     public function edit(Book $book) {
+        $book = Book::findOrFail($book->id);
         return view('books.edit', compact('book'));
     }
 
@@ -46,19 +46,17 @@ class BookController extends Controller
             'penulis' => 'required|string|max:255',
             'tahun_terbit' => 'required|integer',
             'kategori' => 'required|string|max:255',
-            'status' => 'required|in:tersedia,dipinjam',
+            'status' => 'required|string|max:255',
         ]);
 
         $book->update($validated);
-
-        return redirect()->route('books.index')
-            ->with('success', 'Buku berhasil diperbarui.');
+        return redirect()->route('books.index')->with('success', 'Book updated successfully.');
     }
 
     public function destroy(Book $book) {
         $book->delete();
-
-        return redirect()->route('books.index')
-            ->with('success', 'Buku berhasil dihapus.');
+        return redirect()->route('books.index')->with('success', 'Book deleted successfully.');
     }
 }
+
+
