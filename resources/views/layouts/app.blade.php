@@ -36,8 +36,9 @@
                             <a class="nav-link" href="{{ route('notes.index') }}">Notes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('mahasiswa.index') }}">Mahasiswa</a>
+                            <a class="nav-link" href="{{ route('mahasiswa.index') }}">mahasiswa</a>
                         </li>
+                        
                     </ul>
 
                     <!-- Right Side Of Navbar -->

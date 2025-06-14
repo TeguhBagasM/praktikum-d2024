@@ -70,6 +70,8 @@
                     @enderror
                 </div>
 
+                
+
                 <!-- Status Aktif -->
                 <div class="form-group my-2">
                     <label>Status Mahasiswa</label>

@@ -45,7 +45,7 @@
                                         <span class="badge 
                                             @if($data->status == 'tersedia') bg-success
                                             @elseif($data->status == 'dipinjam') bg-warning
-                                            @else bg-info
+                                            @else bg-info   
                                             @endif">
                                             {{ $data->status }}
                                         </span>
